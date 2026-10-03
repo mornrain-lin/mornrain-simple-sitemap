@@ -1,0 +1,36 @@
+# --- Dependencies ---
+/vendor/
+/node_modules/
+
+# --- Build artifacts ---
+/build/
+/dist/
+*.zip
+*.tar.gz
+
+# --- Logs and caches ---
+*.log
+.phpunit.cache/
+.phpunit.result.cache
+
+# --- Composer ---
+composer.lock
+
+# --- Editors and OS ---
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Local environment (never commit) ---
+.env
+wp-config.php
+wp-config-local.php
+
+# --- Backup files ---
+*.bak
+*.orig
+*~

@@ -1,0 +1,50 @@
+# ============================================
+# 通用 .gitattributes 模板
+# 作用：git archive / GitHub 发行包时自动排除开发文件，产出干净发行包
+# ============================================
+
+# ---- 默认：文本文件统一 LF 换行 ----
+* text=auto eol=lf
+
+*.php   text diff=php
+*.css   text
+*.js    text
+*.json  text
+*.md    text
+*.txt   text
+*.xml   text
+*.yml   text
+*.yaml  text
+
+# ---- 二进制文件 ----
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.zip   binary
+*.gz    binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+*.mp4   binary
+*.pdf   binary
+
+# ---- 发行包瘦身：以下内容不进入 zip / GitHub Release ----
+/.github/            export-ignore
+/tests/              export-ignore
+/examples/           export-ignore
+/docs/               export-ignore
+/.gitattributes      export-ignore
+/.gitignore          export-ignore
+/.editorconfig       export-ignore
+/phpunit.xml         export-ignore
+/phpcs.xml           export-ignore
+/phpunit.xml.dist    export-ignore
+/composer.lock       export-ignore
+/package.json        export-ignore
+/package-lock.json   export-ignore
+/CHANGELOG.md        export-ignore
+/README.md           export-ignore

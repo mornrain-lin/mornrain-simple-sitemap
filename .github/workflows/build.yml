@@ -1,0 +1,62 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  release:
+    types: [ published ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '8.1', '8.2', '8.3' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, intl
+          coverage: none
+          tools: composer:v2
+
+      - name: Validate composer.json
+        run: composer validate --no-check-publish
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --no-interaction
+
+      - name: Lint PHP files
+        run: find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 -P4 php -l
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
+
+      - name: Package release ZIP
+        if: matrix.php == '8.1'
+        run: |
+          mkdir -p build
+          zip -r build/mornrain-simple-sitemap.zip . \
+            -x "*.git*" ".github/*" "tests/*" "vendor/*" "build/*" \
+            -x "*.md" ".gitignore" "composer.json" "composer.lock" \
+            -x "phpunit.xml.dist" ".phpunit.cache/*"
+
+      - name: Upload build artifact
+        if: matrix.php == '8.1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mornrain-simple-sitemap
+          path: build/mornrain-simple-sitemap.zip
+          if-no-files-found: error
