@@ -151,24 +151,24 @@ Public helper functions:
 ## File structure
 
 ```text
-mornrain-simple-sitemap/
-|-- .github/
-|   `-- workflows/
-|       `-- build.yml
-|-- includes/
-|   |-- class-mornrain-simple-sitemap-renderer.php
-|   |-- class-mornrain-simple-sitemap.php
-|   `-- functions-simple-sitemap.php
-|-- tests/
-|   |-- ScaffoldTest.php
-|   `-- bootstrap.php
-|-- mornrain-simple-sitemap.php
-|-- composer.json
-|-- LICENSE
-|-- phpunit.xml.dist
-|-- README.md
-|-- readme.txt
-`-- uninstall.php
+mornrain-simple-sitemap/                             # MornRain Simple Sitemap 插件根目录：动态 XML 站点地图
+|-- .github/                                         # GitHub 仓库配置目录
+|   `-- workflows/                                   # GitHub Actions 工作流目录
+|       `-- build.yml                                # CI 工作流：在 PHP 8.1–8.3 上 lint、跑 PHPUnit 并打包 ZIP 构件
+|-- includes/                                        # 插件 PHP 源码目录
+|   |-- class-mornrain-simple-sitemap-renderer.php   # 渲染器：将文章与页面输出为符合规范的 sitemap XML
+|   |-- class-mornrain-simple-sitemap.php            # 主类：注册 /sitemap.xml 重写规则、查询变量与 robots.txt 行
+|   `-- functions-simple-sitemap.php                 # 辅助函数：设置默认值与校验、XML 转义、lastmod 生成
+|-- tests/                                           # PHPUnit 测试目录
+|   |-- ScaffoldTest.php                             # 脚手架冒烟测试：断言 README、LICENSE、composer.json 存在
+|   `-- bootstrap.php                                # PHPUnit 引导文件：存在时才加载 Composer 自动加载器
+|-- mornrain-simple-sitemap.php                      # 插件入口：声明插件头并加载 includes
+|-- composer.json                                    # Composer 元数据与 lint/test 脚本
+|-- LICENSE                                          # GPL-2.0-or-later 许可证全文
+|-- phpunit.xml.dist                                 # PHPUnit 配置，扫描 tests 目录
+|-- README.md                                        # 插件说明文档
+|-- readme.txt                                       # WordPress 插件目录要求的 readme.txt
+`-- uninstall.php                                    # 卸载脚本：删除设置选项并刷新重写规则
 ```
 
 ---
@@ -240,4 +240,3 @@ Yes, with the `mornrain_simple_sitemap_include_post` filter, which receives the
 
 Released under the **GNU General Public License v2 or later**. See
 [LICENSE](LICENSE) for the full text.
-*（内容由AI生成，仅供参考）*
