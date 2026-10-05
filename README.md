@@ -1,14 +1,3 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: cf93d2ba4252e3fc820ac383cb09c649_7edf9a21be7a11f18019525400248c00
-    ReservedCode1: sxFKVXbhBiaL87zatX6PQvD3uF/JD8oZVwb2prEVTfS1ujPQLYAwhPv7J7vlfWI1JpIDDTAhGYHXdP6mvv5/jjzVp8pyrXH9+p9pDoep4XW8YF24ckKK0Rt46ZQ8Lj57yCJ/jaTke4rCpZutUL2zNfzcXCxKPN4PrtnSkNNImdfYLGD3RxXn/wD3l20=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: cf93d2ba4252e3fc820ac383cb09c649_7edf9a21be7a11f18019525400248c00
-    ReservedCode2: sxFKVXbhBiaL87zatX6PQvD3uF/JD8oZVwb2prEVTfS1ujPQLYAwhPv7J7vlfWI1JpIDDTAhGYHXdP6mvv5/jjzVp8pyrXH9+p9pDoep4XW8YF24ckKK0Rt46ZQ8Lj57yCJ/jaTke4rCpZutUL2zNfzcXCxKPN4PrtnSkNNImdfYLGD3RxXn/wD3l20=
----
-
 # MornRain Simple Sitemap
 
 > A standards compliant XML sitemap at /sitemap.xml - generated on the fly, never cached.
