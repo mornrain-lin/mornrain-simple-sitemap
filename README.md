@@ -1,4 +1,4 @@
-![mornrain-simple-sitemap](assets/preview.png)
+![mornrain-simple-sitemap](assets/admin.png)
 
 # MornRain Simple Sitemap
 
@@ -19,6 +19,10 @@ the site owner explicitly configures.
 | Class prefix | `Mornrain_Simple_Sitemap` |
 
 ---
+
+## 界面预览
+
+![插件激活与简介页](assets/admin.png)
 
 ## Table of contents
 
