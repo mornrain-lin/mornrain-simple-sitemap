@@ -1,3 +1,5 @@
+![mornrain-simple-sitemap](assets/preview.png)
+
 # MornRain Simple Sitemap
 
 > A standards compliant XML sitemap at /sitemap.xml - generated on the fly, never cached.
